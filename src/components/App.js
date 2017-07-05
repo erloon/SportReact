@@ -1,14 +1,28 @@
 import React,{PropTypes} from "react";
 import Header from "../common/Header";
 import {connect} from 'react-redux';
+import { Container, Grid } from 'semantic-ui-react';
+
+
 
 class App extends React.Component {
     render() {
         return (
-            <div className="container-fluid">
-                <Header loading={this.props.loading}/>
-                {this.props.children}
-            </div>
+                <Grid >
+                    <Grid.Row>
+                        <Grid.Column>
+                            <Header loading={this.props.loading}/>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column color="orange" width={3} >
+                            
+                        </Grid.Column>
+                         <Grid.Column width={13}>
+                             {this.props.children}
+                        </Grid.Column>
+                    </Grid.Row>          
+                </Grid>
         );
     }
 }

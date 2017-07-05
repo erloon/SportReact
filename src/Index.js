@@ -5,6 +5,8 @@ import {render} from 'react-dom';
 import {browserHistory,Router} from 'react-router';
 import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
+import Routes from './routes';
+import '../node_modules/semantic-ui-css/semantic.min.css';
 
  //możemy tutaj wstrzyknąć stan pocztkowy. Teraz mamy w reducerze
 const store = configureStore();
