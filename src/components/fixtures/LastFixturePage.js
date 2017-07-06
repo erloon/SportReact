@@ -9,14 +9,12 @@ class LastFixturePage extends React.Component {
      this.send=this.send.bind(this);
   }
   send(){
-      debugger;
       api.GetCurrent();
-
   }
     render(){
         return(
             <div>
-                <h2 className="page-header">Last Fixture Page</h2>
+                <h2 className="page-header">Najbliższe mecze</h2>
                 <Button onClick={this.send}/>
             </div>
         );

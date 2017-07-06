@@ -3,6 +3,8 @@ import {PageHeader} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as competetionsAcctions from '../../actions/competetionsAcction';
+import CompetitionList from './CompetetionList';
+
 
 class CompetitionPage extends React.Component {
     constructor(props,context){
@@ -19,7 +21,7 @@ class CompetitionPage extends React.Component {
         return(
             <div>
                 <PageHeader className="page-header">Dostępne ligi</PageHeader>
-
+                <CompetitionList competetions={competetions}/>
                 </div>
         );
     }

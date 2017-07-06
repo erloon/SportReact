@@ -3,7 +3,7 @@ import {Route,IndexRoute} from "react-router";
 import App from "./components/App";
 
 import HomePage from './components/home/HomePage';
-import LastFixture from './components/fixture/LastFixturePage';
+import LastFixture from './components/fixtures/LastFixturePage';
 import Competetions from './components/competition/CompetitionPage';
 
 export default (

@@ -26,7 +26,7 @@ render() {
         <Menu inverted pointing secondary>
           <Menu.Item name="home" active={activeItem.name === "home"} onClick={this.handleItemClick} as={Link} to="/"/>
           <Menu.Item name="Ligi" active={activeItem.name === "Ligi"} onClick={this.handleItemClick} as={Link} to="/Competetions"  />
-          <Menu.Item name="Wyniki" active={activeItem.name === "Wyniki"} onClick={this.handleItemClick} as={Link} to="/LastFixture" />
+          <Menu.Item name="Mecze" active={activeItem.name === "Mecze"} onClick={this.handleItemClick} as={Link} to="/LastFixture" />
         </Menu>
       </Segment>
     );
