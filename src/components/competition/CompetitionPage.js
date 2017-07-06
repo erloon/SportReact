@@ -14,6 +14,8 @@ class CompetitionPage extends React.Component {
 
 
     render(){
+        const {competetions} = this.props; 
+
         return(
             <div>
                 <PageHeader className="page-header">Dostępne ligi</PageHeader>

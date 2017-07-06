@@ -12,7 +12,7 @@ import {loadCurrentCompetetions} from './actions/competetionsAcction';
 
  //możemy tutaj wstrzyknąć stan pocztkowy. Teraz mamy w reducerze
 const store = configureStore();
-stop.dispatch(loadCurrentCompetetions());
+store.dispatch(loadCurrentCompetetions());
 
 render(
     <Provider store={store}>
