@@ -2,7 +2,7 @@ import React ,{PropTypes} from 'react';
 import {PageHeader} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as competetionsAcctions from '../../actions/competetionsAcction';
+import * as competetionsActions from '../../actions/competetionsActions';
 import CompetitionList from './CompetetionList';
 
 
@@ -39,7 +39,7 @@ function mapStateToProps(state,ownProps){
 
 function mapDispatchToProps(dispatch){
     return {
-        actions: bindActionCreators(competetionsAcctions,dispatch)
+        actions: bindActionCreators(competetionsActions,dispatch)
     };
 }
 
