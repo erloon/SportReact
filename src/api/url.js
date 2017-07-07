@@ -19,3 +19,7 @@ export const GET_TEAM_BY_TIMEFRAME_FIXTURES="http://api.football-data.org/v1/tea
 
 export const GET_TEAM="http://api.football-data.org/v1/teams/${team}";
 export const GET_PALYERS="http://api.football-data.org/v1/teams/${team}/players";
+
+export const GET_LEAGUE_TABELE="http://api.football-data.org/v1/competitions/${competetion}/leagueTable";
+export const GET_LEAGUE_TABELE_IN_MATCHDAY="http://api.football-data.org/v1/competitions/${competetion}/leagueTable/matchday=${day}";
+export const GET_TEAMS="http://api.football-data.org/v1/competitions/${competetion}/teams";

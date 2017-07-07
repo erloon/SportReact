@@ -4,7 +4,7 @@ const token ="9dd56985d92c40d997bb658abf24d77f";
 
 class ApiMethods {
 
-//FIXTURES
+
     static GetNextFixtures(){
         return fetch(urls.GET_NEXT_FIXTURES,{
             headers: new Headers({

@@ -15,5 +15,39 @@ class CompetetionApi {
             });
     }
 
+    static GetLeagueTable(competetionId) {
+        let competetion=competetionId;
+        return fetch(urls.GET_LEAGUE_TABELE, {
+            headers: new Headers({ 'X-Auth-Token': token}),
+                method: 'GET'
+            }).then(function(response){
+                return response.json();
+            }).catch(error=>{
+                return error;
+            });
+    }
+    static GetLeagueTableInMatchDay(competetionId,matchDay) {
+        let competetion=competetionId;
+        let day =matchDay;
+        return fetch(urls.GET_LEAGUE_TABELE_IN_MATCHDAY, {
+            headers: new Headers({ 'X-Auth-Token': token}),
+                method: 'GET'
+            }).then(function(response){
+                return response.json();
+            }).catch(error=>{
+                return error;
+            });
+    }
+     static GetTeams(competetionId) {
+        let competetion=competetionId;
+        return fetch(urls.GET_TEAMS, {
+            headers: new Headers({ 'X-Auth-Token': token}),
+                method: 'GET'
+            }).then(function(response){
+                return response.json();
+            }).catch(error=>{
+                return error;
+            });
+    }
 }
 export default CompetetionApi;
