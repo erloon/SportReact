@@ -6,6 +6,9 @@ export function loadCurrentCompetetionsSuccess(competetions){
     return {type: types.LOAD_CURRENT_COMPETETIONS_SUCCESS, competetions};
 }
 
+
+
+
 export function loadCurrentCompetetions(){
     return function(dispatch){
         dispatch(beginAjaxCall());
