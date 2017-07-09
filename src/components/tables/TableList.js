@@ -3,6 +3,7 @@ import { Table } from 'semantic-ui-react';
 import TableRow from './TableRow';
 
 const TableList =({teams})=>{
+    debugger;
     return (
          <Table striped>
              <Table.Header>
@@ -14,16 +15,15 @@ const TableList =({teams})=>{
                      <Table.HeaderCell>Wygrane</Table.HeaderCell>
                      <Table.HeaderCell>Remisy</Table.HeaderCell>
                      <Table.HeaderCell>Przegrane</Table.HeaderCell>
-                     <Table.HeaderCell>Bramki</Table.HeaderCell>
+                     <Table.HeaderCell>Bramki strzelone</Table.HeaderCell>
                      <Table.HeaderCell>Barmki stracone</Table.HeaderCell>
                      <Table.HeaderCell>Bramki różnieca</Table.HeaderCell>
-                     <Table.HeaderCell>Pozycja</Table.HeaderCell>
                  </Table.Row>
              </Table.Header>
              <Table.Body>
-                 {teams.map(team=>{
-                    <TableRow key={team.position} team={team}/>
-                 })}
+                  {teams.map(team=>
+                <TableRow key={team.teamName} team={team}/>
+            )}
             </Table.Body>
          </Table>
     );

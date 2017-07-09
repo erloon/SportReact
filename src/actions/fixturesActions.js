@@ -29,9 +29,6 @@ export function loadTeamFixturesBySeasonSuccess(fixtures){
 export function loadTeamFixturesByTimeFrameSuccess(fixtures){
     return {type: types.LOAD_TEAM_FIXTURES_BY_TIMEFRAME_SUCCESS, fixtures};
 }
-
-
-
 export function loadNextFixtures(){
     return function(dispatch){
         dispatch(beginAjaxCall());

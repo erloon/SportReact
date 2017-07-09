@@ -8,10 +8,11 @@ import configureStore from './store/configureStore';
 import Routes from './routes';
 import '../node_modules/semantic-ui-css/semantic.min.css';
 import {loadCurrentCompetetions} from './actions/competetionsActions';
-
+import {loadNextFixtures} from './actions/fixturesActions';
 
 const store = configureStore();
 store.dispatch(loadCurrentCompetetions());
+store.dispatch(loadNextFixtures());
 
 render(
     <Provider store={store}>

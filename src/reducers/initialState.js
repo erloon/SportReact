@@ -6,5 +6,11 @@ export default {
             matchday:"",
             standing:[]
         }},
+    allFixtures:{
+        nextFixtures:{
+            timeFrameStart:"",
+            timeFrameEnd:""
+        }
+    },
     ajaxCallsInProgress : 0
 };

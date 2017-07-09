@@ -4,10 +4,11 @@ import {connect} from 'react-redux';
 import { Container, Grid } from 'semantic-ui-react';
 
 
-
 class App extends React.Component {
     render() {
         return (
+        <div>
+            <Container fluid>
                 <Grid >
                     <Grid.Row>
                         <Grid.Column>
@@ -15,7 +16,7 @@ class App extends React.Component {
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
-                        <Grid.Column color="orange" width={3} >
+                        <Grid.Column width={3} >
                             
                         </Grid.Column>
                          <Grid.Column width={13}>
@@ -23,6 +24,8 @@ class App extends React.Component {
                         </Grid.Column>
                     </Grid.Row>          
                 </Grid>
+            </Container>
+        </div>
         );
     }
 }

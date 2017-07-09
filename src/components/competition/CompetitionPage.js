@@ -32,7 +32,6 @@ CompetitionPage.propTypes = {
 };
 
 function mapStateToProps(state,ownProps){
-    debugger;
     return {
         competetions: state.allCompetetions.competetions
     };
