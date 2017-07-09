@@ -1,4 +1,10 @@
 export default {
-    competetions: [],
-    ajaxCallsInProgress: 0
+    allCompetetions:{
+        competetions:[], 
+        table: {
+            leagueCaption:"",
+            matchday:"",
+            standing:[]
+        }},
+    ajaxCallsInProgress : 0
 };

@@ -15,7 +15,7 @@ class LastFixturePage extends React.Component {
         return(
             <div>
                 <h2 className="page-header">Najbliższe mecze</h2>
-                <Button onClick={this.send}/>
+                
             </div>
         );
     }

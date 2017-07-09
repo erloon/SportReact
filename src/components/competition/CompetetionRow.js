@@ -7,7 +7,7 @@ const CompetetionRow  = ({competetion})=>{
     return (
         <List.Item>
              <List.Content floated="right">
-                <Button><Link to={'/tables/'+competetion.id}>Tabela</Link></Button>
+                <Button><Link to={'/table/'+competetion.id}>Tabela</Link></Button>
                 <Button><Link to={'/fixtures/'+competetion.id}>Wyniki</Link></Button>
                 <Button><Link to={'/teams/'+competetion.id}>Zespoły</Link></Button>
             </List.Content>

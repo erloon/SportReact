@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 import ajaxCallsInProgress from './ajaxStatusReducer';
-import competetions from './competetionReducer';
+import allCompetetions from './competetionReducer';
 
 
 const rootReducer = combineReducers({
-    competetions,
+    allCompetetions,
     ajaxCallsInProgress
 });
 
