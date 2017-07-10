@@ -12,9 +12,7 @@ const NewFixture =({newFixture})=>{
                 <Statistic.Value>{(homeScore)+ " : "+awayScore}</Statistic.Value>
                 <Statistic.Label>{moment(newFixture.date).format('LLL')}</Statistic.Label>
             </Statistic>
-            <Statistic>
-                <Statistic.Label>{newFixture.awayTeamName}</Statistic.Label>
-            </Statistic>
+             <Statistic size='huge' label={newFixture.awayTeamName} />
         </Statistic.Group>
     );
 };
