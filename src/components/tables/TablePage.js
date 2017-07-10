@@ -17,14 +17,9 @@ class TablePage extends React.Component {
     }
 
 componentDidMount(){
-    debugger;
      let competetion =this.props.params.id;
      let table= this.props.actions.loadLeagueTable(competetion);
-     this.setState({
-         table: table
-     })
 }
-
 
     render(){
         const {table} = this.props; 
@@ -41,7 +36,9 @@ componentDidMount(){
 
 TablePage.propTypes = {
     competetions: PropTypes.array.isRequired,
-     table: PropTypes.object.isRequired
+     table: PropTypes.object.isRequired,
+     loadLeagueTable: PropTypes.func.isRequired
+     
 };
 
 function mapStateToProps(state,ownProps){

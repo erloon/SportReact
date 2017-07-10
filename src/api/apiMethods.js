@@ -19,7 +19,7 @@ class ApiMethods {
     }
 
     static GetFixturesByTime(time){
-        let timeFrame=time
+        let timeFrame=time;
         return fetch(urls.GET_NEXT_FIXTURES_BY_TIME,{
             headers: new Headers({
                 'X-Auth-Token': token

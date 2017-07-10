@@ -9,7 +9,8 @@ export default {
     allFixtures:{
         nextFixtures:{
             timeFrameStart:"",
-            timeFrameEnd:""
+            timeFrameEnd:"",
+            fixtures:[]
         }
     },
     ajaxCallsInProgress : 0

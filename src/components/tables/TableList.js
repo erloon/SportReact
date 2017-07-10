@@ -3,7 +3,6 @@ import { Table } from 'semantic-ui-react';
 import TableRow from './TableRow';
 
 const TableList =({teams})=>{
-    debugger;
     return (
          <Table striped>
              <Table.Header>
@@ -30,5 +29,5 @@ const TableList =({teams})=>{
 };
 TableList.propTypes = {
     teams: PropTypes.array.isRequired
-}
+};
 export default TableList;

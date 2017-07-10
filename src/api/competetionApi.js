@@ -18,7 +18,6 @@ class CompetetionApi {
     static GetLeagueTable(competetionId) {
         let competetion=competetionId;
         let url ="http://api.football-data.org/v1/competitions/"+competetion+"/leagueTable";
-        debugger;
         return fetch(url, {
             headers: new Headers({ 'X-Auth-Token': token}),
                 method: 'GET'
