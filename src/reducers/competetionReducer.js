@@ -14,7 +14,7 @@ export default function competetionReducer(state=initialState.allCompetetions,ac
         case types.LOAD_LEAGUE_TABLE_MATCHDAY_SUCCESS:
             return action.table;
         case types.LOAD_TEAMS_SUCCESS:
-            return action.teams;
+            return Object.assign({},state,{teams:action.teams});
         default:
             return state;
     }

@@ -11,8 +11,8 @@ export function loadFixturesByTimeSuccess(fixtures){
 export function loadFixturesByLeagueCodeSuccess(fixtures){
     return {type: types.LOAD_NEXT_FIXTURES_BY_LEAGUE_CODE_SUCCESS, fixtures};
 }
-export function loadompetetionFixturesSuccess(fixtures){
-    return {type: types.LOAD_COMPETETION_FIXTURES_SUCCESS, fixtures};
+export function loadCompetetionFixturesSuccess(competetionFixtures){
+    return {type: types.LOAD_COMPETETION_FIXTURES_SUCCESS, competetionFixtures};
 }
 export function loadCompetetionFixturesByTimeSuccess(fixtures){
     return {type: types.LOAD_COMPETETION_FIXTURES_BY_TIME_SUCCESS, fixtures};
@@ -72,8 +72,9 @@ export function loadCompetetionFixtures(competetionId){
     return function(dispatch){
         dispatch(beginAjaxCall());
         return api.GetCompetetionFixtures(competetionId)
-            .then(fixtures=>{
-                dispatch(loadompetetionFixturesSuccess(fixtures));
+            .then(competetionFixtures=>{
+                debugger;
+                dispatch(loadCompetetionFixturesSuccess(competetionFixtures));
             })
             .catch(error=>{
                 dispatch(ajaxCallError(error));

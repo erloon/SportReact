@@ -16,8 +16,7 @@ class CompetetionApi {
     }
 
     static GetLeagueTable(competetionId) {
-        let competetion=competetionId;
-        let url ="http://api.football-data.org/v1/competitions/"+competetion+"/leagueTable";
+        let url ="http://api.football-data.org/v1/competitions/"+competetionId+"/leagueTable";
         return fetch(url, {
             headers: new Headers({ 'X-Auth-Token': token}),
                 method: 'GET'
@@ -40,7 +39,7 @@ class CompetetionApi {
             });
     }
      static GetTeams(competetionId) {
-        let competetion=competetionId;
+        let url = "http://api.football-data.org/v1/competitions/"+competetionId+"/teams";
         return fetch(urls.GET_TEAMS, {
             headers: new Headers({ 'X-Auth-Token': token}),
                 method: 'GET'

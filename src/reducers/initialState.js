@@ -1,6 +1,7 @@
 export default {
     allCompetetions:{
         competetions:[], 
+        teams:{},
         table: {
             leagueCaption:"",
             matchday:"",
@@ -10,6 +11,9 @@ export default {
         nextFixtures:{
             timeFrameStart:"",
             timeFrameEnd:"",
+            fixtures:[]
+        },
+        competetionFixtures:{
             fixtures:[]
         }
     },

@@ -46,12 +46,14 @@ class ApiMethods {
     }
     static GetCompetetionFixtures(competetionId){
         let competetion=competetionId;
-        return fetch(urls.GET_COMPETETION_FIXTURES,{
+        let url ="http://api.football-data.org/v1/competitions/"+competetion+"/fixtures";
+        return fetch(url,{
             headers: new Headers({
                 'X-Auth-Token': token
             }),
             method:"GET"
         }).then(function(response){
+
             return response.json();
         }).catch(error=>{
             return error;
