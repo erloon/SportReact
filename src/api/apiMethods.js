@@ -86,9 +86,8 @@ class ApiMethods {
             return error;
         });
     }
-    static GetTeamFixtures(teamId){
-        let team=teamId;
-        return fetch(urls.GET_TEAM_FIXTURES,{
+    static GetTeamFixtures(url){
+        return fetch(url,{
             headers: new Headers({
                 'X-Auth-Token': token
             }),

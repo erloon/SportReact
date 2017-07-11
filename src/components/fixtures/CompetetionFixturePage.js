@@ -10,12 +10,10 @@ class CompetetionFixturesPage extends React.Component{
     }
 
 componentDidMount(){
-    debugger;
     let competetion =this.props.params.id;
      let fixtures= this.props.actions.loadCompetetionFixtures(competetion);
 }
     render(){
-        debugger;
         const {fixtures} =this.props;
         return (
             <div>
@@ -26,7 +24,8 @@ componentDidMount(){
 }
 CompetetionFixturesPage.propTypes ={
     fixtures: PropTypes.object.isRequired
-}
+};
+
 function mapStateToProps(state,ownProps){
     return {
         fixtures:state.allFixtures.competetionFixtures

@@ -7,6 +7,7 @@ import LastFixture from './components/fixtures/LastFixturePage';
 import Competetions from './components/competition/CompetitionPage';
 import TablePage from './components/tables/TablePage';
 import CompetitionFixturePage from './components/fixtures/CompetetionFixturePage';
+import TeamsPage from './components/teams/TeamsPage';
 
 export default (
   <Route path="/" component={App}>
@@ -15,5 +16,6 @@ export default (
      <Route path="/Competetions" component={Competetions} />
      <Route path="/table/:id" component={TablePage} />
      <Route path="/fixtures/:id" component={CompetitionFixturePage} />
+     <Route path="/teams/:id" component={TeamsPage} />
   </Route>
 );

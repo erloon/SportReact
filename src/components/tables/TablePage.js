@@ -36,9 +36,7 @@ componentDidMount(){
 
 TablePage.propTypes = {
     competetions: PropTypes.array.isRequired,
-     table: PropTypes.object.isRequired,
-     loadLeagueTable: PropTypes.func.isRequired
-     
+     table: PropTypes.object.isRequired  
 };
 
 function mapStateToProps(state,ownProps){

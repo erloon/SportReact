@@ -40,7 +40,7 @@ class CompetetionApi {
     }
      static GetTeams(competetionId) {
         let url = "http://api.football-data.org/v1/competitions/"+competetionId+"/teams";
-        return fetch(urls.GET_TEAMS, {
+        return fetch(url, {
             headers: new Headers({ 'X-Auth-Token': token}),
                 method: 'GET'
             }).then(function(response){

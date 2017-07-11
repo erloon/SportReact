@@ -1,7 +1,9 @@
 export default {
     allCompetetions:{
         competetions:[], 
-        teams:{},
+        teams:{
+            teams:[]
+        },
         table: {
             leagueCaption:"",
             matchday:"",

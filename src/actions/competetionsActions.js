@@ -21,7 +21,9 @@ export function loadCompetetionsLeagueTableByMatchDaySuccess(table){
 export function loadCompetetionsTeamsSuccess(teams){
     return {type: types.LOAD_TEAMS_SUCCESS, teams};
 }
-
+export function loadTeamFixturesSuccess(fixtures){
+    return {type: types.LOAD_TEAM_FIXTURES_SUCCESS, fixtures};
+}
 export function loadCurrentCompetetions(){
     return function(dispatch){
         dispatch(beginAjaxCall());
@@ -106,6 +108,21 @@ export function loadTeams(competetionId){
         return competetionApi.GetTeams(competetionId)
             .then(teams=>{
                 dispatch(loadCompetetionsTeamsSuccess(teams));
+            })
+            .catch(error=>{
+                dispatch(ajaxCallError(error));
+                throw(error);
+            });
+    };
+}
+
+export function loadTeamFixture(url){
+    return function(dispatch){
+        dispatch(beginAjaxCall());
+        return api.GetTeamFixtures(url)
+            .then(fixtures=>{
+                debugger;
+                dispatch(loadTeamFixturesSuccess(fixtures));
             })
             .catch(error=>{
                 dispatch(ajaxCallError(error));
