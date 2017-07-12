@@ -4,10 +4,12 @@ import {bindActionCreators} from 'redux';
 import * as competetionActions from '../../actions/competetionsActions';
 import { Item} from 'semantic-ui-react';
 import TeamItem from './TeamItem';
+import { browserHistory,hashHistory } from 'react-router';
 
 class TeamsPage extends React.Component {
     constructor(props,context){
         super(props,context);
+        this.redirectToTeam = this.redirectToTeam.bind(this);
     }
 
 componentDidMount(){
@@ -15,16 +17,25 @@ componentDidMount(){
     this.props.actions.loadTeams(competetionId);
 }
 
-getTeamFixtures(url){
-    this.props.actions.loadTeamFixture(url);
+
+redirectToTeam(event){
+    debugger;
+    let url = event.target.value;
+    let id ="";
+    if(url.length===41){
+        id=url.slice(-3);
+    }else{
+        id=url.slice(-2);
+    }
+    browserHistory.push("/team/"+id);
 }
     render(){
         const {teams} =this.props;
         return (
             <div>
                 <Item.Group>
-                    {teams.map(team=>
-                        <TeamItem key={team.name} team={team}/>
+                    {teams.map(team=> 
+                        <TeamItem key={team.name} team={team} selfRedirect={this.redirectToTeam}/>
                     )}
                 </Item.Group>
             </div>

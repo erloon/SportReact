@@ -63,10 +63,10 @@ export function loadTeam(teamId){
             });
     };
 }
-export function loadPlayers(teamId){
+export function loadPlayers(url){
     return function(dispatch){
         dispatch(beginAjaxCall());
-        return api.GetPlayers(teamId)
+        return api.GetPlayers(url)
             .then(palyers=>{
                 dispatch(loadPalyersSuccess(palyers));
             })

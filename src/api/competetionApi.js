@@ -14,7 +14,6 @@ class CompetetionApi {
                 return error;
             });
     }
-
     static GetLeagueTable(competetionId) {
         let url ="http://api.football-data.org/v1/competitions/"+competetionId+"/leagueTable";
         return fetch(url, {

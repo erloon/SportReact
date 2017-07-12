@@ -17,7 +17,7 @@ export const GET_TEAM_FIXTURES="http://api.football-data.org/v1/teams/${team}/fi
 export const GET_TEAM_BY_SEASON_FIXTURES="http://api.football-data.org/v1/teams/${team}/fixtures?season=${season}&venue=home";
 export const GET_TEAM_BY_TIMEFRAME_FIXTURES="http://api.football-data.org/v1/teams/${team}/fixtures?timeFrame=${time}&venue=home";
 
-export const GET_TEAM="http://api.football-data.org/v1/teams/${team}";
+export const GET_TEAM="http://api.football-data.org/v1/teams/";
 export const GET_PALYERS="http://api.football-data.org/v1/teams/${team}/players";
 
 export const GET_LEAGUE_TABELE="http://api.football-data.org/v1/competitions/${competetion}/leagueTable";

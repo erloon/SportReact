@@ -126,9 +126,9 @@ class ApiMethods {
             return error;
         });
     }
-    static GetTeam(teamId){
-        let team = teamId;
-        return fetch(urls.GET_TEAM,{
+    static GetTeam(teamid){
+
+        return fetch(urls.GET_TEAM+teamid,{
             headers: new Headers({
                 'X-Auth-Token': token
             }),
@@ -139,9 +139,8 @@ class ApiMethods {
             return error;
         });
     }
-    static GetPlayers(teamId){
-        let team = teamId;
-        return fetch(urls.GET_PALYERS,{
+    static GetPlayers(url){
+        return fetch(url,{
             headers: new Headers({
                 'X-Auth-Token': token
             }),

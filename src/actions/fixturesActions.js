@@ -20,9 +20,7 @@ export function loadCompetetionFixturesByTimeSuccess(fixtures){
 export function loadCompetetionFixturesByMatchDaySuccess(fixtures){
     return {type: types.LOAD_COMPETETION_FIXTURES_BY_MATCHDAY_SUCCESS, fixtures};
 }
-export function loadTeamFixturesSuccess(fixtures){
-    return {type: types.LOAD_TEAM_FIXTURES_SUCCESS, fixtures};
-}
+
 export function loadTeamFixturesBySeasonSuccess(fixtures){
     return {type: types.LOAD_TEAM_FIXTURES_BY_SEASON_SUCCESS, fixtures};
 }
@@ -101,19 +99,6 @@ export function loadCompetetionFixturesByMatchDay(competetionId,matchDay){
         return api.GetCompetetionFixturesByMatchDay(competetionId,matchDay)
             .then(fixtures=>{
                 dispatch(loadCompetetionFixturesByMatchDaySuccess(fixtures));
-            })
-            .catch(error=>{
-                dispatch(ajaxCallError(error));
-                throw(error);
-            });
-    };
-}
-export function loadTeamFixture(teamId){
-    return function(dispatch){
-        dispatch(beginAjaxCall());
-        return api.GetTeamFixtures(teamId)
-            .then(fixtures=>{
-                dispatch(loadTeamFixturesSuccess(fixtures));
             })
             .catch(error=>{
                 dispatch(ajaxCallError(error));

@@ -8,7 +8,11 @@ export default {
             leagueCaption:"",
             matchday:"",
             standing:[]
-        }},
+        },
+        team:{},
+        teamFixtures:{},
+        teamPlayers:{}
+    },    
     allFixtures:{
         nextFixtures:{
             timeFrameStart:"",
