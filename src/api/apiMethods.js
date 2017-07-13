@@ -86,7 +86,8 @@ class ApiMethods {
             return error;
         });
     }
-    static GetTeamFixtures(url){
+    static GetTeamFixtures(teamId){
+        let url ="http://api.football-data.org/v1/teams/"+teamId+"/fixtures";
         return fetch(url,{
             headers: new Headers({
                 'X-Auth-Token': token

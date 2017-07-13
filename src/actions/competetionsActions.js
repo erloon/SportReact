@@ -116,10 +116,10 @@ export function loadTeams(competetionId){
     };
 }
 
-export function loadTeamFixture(url){
+export function loadTeamFixture(teamId){
     return function(dispatch){
         dispatch(beginAjaxCall());
-        return api.GetTeamFixtures(url)
+        return api.GetTeamFixtures(teamId)
             .then(fixtures=>{
                 debugger;
                 dispatch(loadTeamFixturesSuccess(fixtures));

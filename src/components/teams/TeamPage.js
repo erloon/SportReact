@@ -2,7 +2,8 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as competetionActions from '../../actions/competetionsActions';
-import {Item, Header, Image} from 'semantic-ui-react';
+import {Item, Header, Image, Button} from 'semantic-ui-react';
+import TeamFixtures from './TeamFixtures';
 
 class TeamPage extends React.Component{
     constructor(props,context){
@@ -10,10 +11,17 @@ class TeamPage extends React.Component{
          this.state={
              teamId:""
         };
+        this.getFixtures = this.getFixtures.bind(this);
+    }
+    getFixtures(){
+        debugger;
+        let teamId = this.props.params.id;
+        this.props.actions.loadTeamFixture(teamId);
     }
     componentDidMount(){
-    let teamId = this.props.params.id;
-    this.props.actions.loadTeam(teamId);
+        let teamId = this.props.params.id;
+        this.setState({teamId:teamId});
+        this.props.actions.loadTeam(teamId);
 }
     render(){
         const {team} = this.props;
@@ -25,6 +33,11 @@ class TeamPage extends React.Component{
                 </Header>
                 <p>Kod: {team.code}</p>
                 <p>Nazwa skrócona: {team.shortName}</p>
+                <div>
+                    <Button primary onClick={this.getFixtures}>Wyniki</Button>
+                    <Button secondary>Skład</Button>
+                 </div>
+                <TeamFixtures />
             </div>
         );
     }
@@ -35,7 +48,8 @@ TeamPage.propTypes ={
 
 function mapStateToProps(state,ownProps){
     return {
-        team: state.allCompetetions.team
+        team: state.allCompetetions.team,
+        teamFixtures:state.allCompetetions.teamFixtures
     };
 }
 

@@ -24,7 +24,11 @@ redirectToTeam(event){
     let id ="";
     if(url.length===41){
         id=url.slice(-3);
-    }else{
+    }else if(url.length===42)
+    {
+        id=url.slice(-4);
+    }
+    else{
         id=url.slice(-2);
     }
     browserHistory.push("/team/"+id);
