@@ -15,7 +15,7 @@ class LastFixturePage extends React.Component {
         const {nextFixtures} = this.props; 
         return(
             <div>
-                <Header as="h1">Najbliższe mecze</Header>
+                <Header as="h1">Wyniki tygodnia</Header>
                 <Header as="h4">Tydzien {"od "+nextFixtures.timeFrameStart+" do "+nextFixtures.timeFrameEnd}</Header>
                    {nextFixtures.fixtures.map(newFixture =>
                     <NewFixture key={newFixture.homeTeamName+newFixture.date} newFixture={newFixture}/>

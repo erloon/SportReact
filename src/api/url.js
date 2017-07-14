@@ -5,7 +5,7 @@ export const GET_TABELE_COMPETETION ="http://api.football-data.org/v1/competitio
 export const GET_TABLE_BY_DAY_COMPETETION="http://api.football-data.org/v1/competitions/398/leagueTable/matchday=${day}";
 
 export const GET_HEAD2HEAD_FIXTURE="";
-export const GET_NEXT_FIXTURES="http://api.football-data.org/v1/fixtures/";
+export const GET_NEXT_FIXTURES="http://api.football-data.org/v1/fixtures?timeFrame=p7";
 export const GET_NEXT_FIXTURES_BY_TIME="http://api.football-data.org/v1/fixtures/timeFrame=${timeFrame}";
 export const GET_NEXT_FIXTURES_BY_LEAGUECODE="http://api.football-data.org/v1/fixtures/timeFrame=${code}";
 

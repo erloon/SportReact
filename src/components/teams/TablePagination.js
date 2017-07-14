@@ -8,7 +8,6 @@ class TablePagination extends Component{
         this.state = { pager: {} };
     }
 componentWillMount() {
-    debugger;
         if (this.props.items && this.props.items.length) {
             this.setPage(this.props.initialPage);
         }
@@ -19,7 +18,6 @@ componentDidUpdate(prevProps, prevState) {
         }
     }
 setPage(page) {
-    debugger;
         let items = this.props.items.fixtures;
         let pager = this.state.pager;
         let totalItems = this.props.items.count;
@@ -33,7 +31,6 @@ setPage(page) {
         this.props.onChangePage(pageOfItems);
     }
 getPager(totalItems, currentPage, pageSize) {
-    debugger;
         currentPage = currentPage || 1;
         pageSize = pageSize || 10;
         let totalPages = Math.ceil(totalItems / pageSize);
@@ -73,9 +70,7 @@ getPager(totalItems, currentPage, pageSize) {
         };
     }
     render(){
-        debugger;
         const pager = this.state.pager;
- 
         if (!pager.pages || pager.pages.length <= 1) {
             return null;
         }
@@ -86,7 +81,6 @@ getPager(totalItems, currentPage, pageSize) {
                 {pager.pages.map((page, index) =>
                     <Menu.Item key={index} onClick={() => this.setPage(page)} as="a">{page}</Menu.Item>
                 )}
-                
                 <Menu.Item as="a" onClick={() => this.setPage(pager.currentPage + 1)}>Następny</Menu.Item>
                 <Menu.Item as="a" onClick={() => this.setPage(pager.totalPages)}>Ostatni</Menu.Item>
           </Menu>
@@ -96,8 +90,8 @@ getPager(totalItems, currentPage, pageSize) {
 } 
 
 TablePagination.propTypes = {
-    // items: PropTypes.array.isRequired,
-    // onChangePage: PropTypes.func.isRequired,
+    items: PropTypes.array.isRequired,
+    onChangePage: PropTypes.func.isRequired,
     initialPage: PropTypes.number
 };
 

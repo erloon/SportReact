@@ -140,7 +140,8 @@ class ApiMethods {
             return error;
         });
     }
-    static GetPlayers(url){
+    static GetPlayers(teamid){
+        let url = "http://api.football-data.org/v1/teams/"+teamid+"/players";
         return fetch(url,{
             headers: new Headers({
                 'X-Auth-Token': token

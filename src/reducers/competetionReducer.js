@@ -8,6 +8,7 @@ export default function competetionReducer(state=initialState.allCompetetions,ac
         case types.LOAD_TEAM_SUCCESS:
             return Object.assign({},state,{team:action.team}); 
         case types.LOAD_TEAM_PALYERS_SUCCESS:
+            debugger;
             return Object.assign({},state,{teamPlayers:action.players});
         case types.LOAD_LEAGUE_TABLE_SUCCESS:
             return Object.assign({},state,{table: action.table});

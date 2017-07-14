@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as competetionActions from '../../actions/competetionsActions';
 import TablePagination from './TablePagination';
+import moment from 'moment';
 
 class TeamFixtures extends React.Component{
     constructor(props,context){
@@ -17,38 +18,36 @@ onChangePage(pageOfItems) {
         this.setState({ pageOfItems: pageOfItems });
     }
     render(){
-        debugger;
         let {teamFixtures} =this.props;
         return (
             <Table celled>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>Data</Table.HeaderCell>
-          <Table.HeaderCell>Kolejka</Table.HeaderCell>
-          <Table.HeaderCell>Mecz</Table.HeaderCell>
-          <Table.HeaderCell>Wynik</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-
-      <Table.Body>
-       {this.state.pageOfItems.map(item =>
-        <Table.Row key={item.date}>
-            <Table.Cell>{item.date}</Table.Cell>
-            <Table.Cell>{item.matchday}</Table.Cell>
-            <Table.Cell>{item.homeTeamName+" : "+item.awayTeamName}</Table.Cell>
-            <Table.Cell>{item.result.goalsHomeTeam+" : "+item.result.goalsAwayTeam}</Table.Cell>
-        </Table.Row>
-        )}
-      </Table.Body>
-
-      <Table.Footer>
-      <Table.Row>
-        <Table.HeaderCell colSpan='3'>
-          <TablePagination items={teamFixtures} onChangePage={this.onChangePage}/>
-        </Table.HeaderCell>
-      </Table.Row>
-      </Table.Footer>
-    </Table>
+                <Table.Header>
+                    <Table.Row>
+                         <Table.HeaderCell>Data</Table.HeaderCell>
+                         <Table.HeaderCell>Kolejka</Table.HeaderCell>
+                         <Table.HeaderCell>Mecz</Table.HeaderCell>
+                         <Table.HeaderCell>Wynik</Table.HeaderCell>
+                    </Table.Row>
+                 </Table.Header>
+                <Table.Body>
+                    {this.state.pageOfItems.map(item => 
+                        <Table.Row key={item.date}>
+                            <Table.Cell>{moment(item.date).format("LLL")}</Table.Cell>
+                            <Table.Cell>{item.matchday}</Table.Cell>
+                            <Table.Cell>{item.homeTeamName+" : "+item.awayTeamName}</Table.Cell>
+                            <Table.Cell>{
+                                (item.result.goalsHomeTeam || 0) +" : "+ (item.result.goalsAwayTeam || 0)}</Table.Cell>
+                        </Table.Row>
+                    )}
+                </Table.Body>
+                <Table.Footer>
+                    <Table.Row>
+                        <Table.HeaderCell colSpan='3'>
+                        <TablePagination items={teamFixtures} onChangePage={this.onChangePage}/>
+                        </Table.HeaderCell>
+                    </Table.Row>
+                </Table.Footer>
+            </Table>
         );
     }
 }

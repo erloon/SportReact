@@ -4,19 +4,30 @@ import {bindActionCreators} from 'redux';
 import * as competetionActions from '../../actions/competetionsActions';
 import {Item, Header, Image, Button} from 'semantic-ui-react';
 import TeamFixtures from './TeamFixtures';
+import TeamPLayers from './TeamPlayers';
 
 class TeamPage extends React.Component{
     constructor(props,context){
         super(props,context);
          this.state={
-             teamId:""
+             teamId:"",
+            fixturesVisable: false,
+            playersVisable:false
         };
         this.getFixtures = this.getFixtures.bind(this);
+        this.getPlayers = this.getPlayers.bind(this);
     }
     getFixtures(){
+        this.props.actions.loadTeamFixture(this.props.params.id);
+        this.setState({fixturesVisable:true,
+        playersVisable:false});
+    }
+
+    getPlayers(){
         debugger;
-        let teamId = this.props.params.id;
-        this.props.actions.loadTeamFixture(teamId);
+        this.props.actions.loadPlayers(this.props.params.id);
+         this.setState({fixturesVisable:false,
+        playersVisable:true});
     }
     componentDidMount(){
         let teamId = this.props.params.id;
@@ -24,7 +35,7 @@ class TeamPage extends React.Component{
         this.props.actions.loadTeam(teamId);
 }
     render(){
-        const {team} = this.props;
+        const {team, fixtures, teamPlayers} = this.props;
         return(
             <div>
                 <Header>
@@ -35,9 +46,12 @@ class TeamPage extends React.Component{
                 <p>Nazwa skrócona: {team.shortName}</p>
                 <div>
                     <Button primary onClick={this.getFixtures}>Wyniki</Button>
-                    <Button secondary>Skład</Button>
+                    <Button secondary onClick={this.getPlayers}>Skład</Button>
                  </div>
-                <TeamFixtures />
+                 <br/>
+                   {this.state.fixturesVisable ? (<TeamFixtures fixtures={fixtures} />) :null }
+                   
+                   {this.state.playersVisable ? (<TeamPLayers teamPlayers={teamPlayers}/>): null}
             </div>
         );
     }
@@ -49,7 +63,8 @@ TeamPage.propTypes ={
 function mapStateToProps(state,ownProps){
     return {
         team: state.allCompetetions.team,
-        teamFixtures:state.allCompetetions.teamFixtures
+        teamFixtures:state.allCompetetions.teamFixtures,
+        teamPlayers:state.allCompetetions.teamPlayers
     };
 }
 

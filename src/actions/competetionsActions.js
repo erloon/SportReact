@@ -9,8 +9,8 @@ export function loadCurrentCompetetionsSuccess(competetions){
 export function loadTeamSuccess(team){
     return {type: types.LOAD_TEAM_SUCCESS, team};
 }
-export function loadPalyersSuccess(palyers){
-    return {type: types.LOAD_TEAM_PALYERS_SUCCESS, palyers};
+export function loadPalyersSuccess(players){
+    return {type: types.LOAD_TEAM_PALYERS_SUCCESS, players};
 }
 export function loadCompetetionsLeagueTableSuccess(table){
     return {type: types.LOAD_LEAGUE_TABLE_SUCCESS, table};
@@ -63,12 +63,12 @@ export function loadTeam(teamId){
             });
     };
 }
-export function loadPlayers(url){
+export function loadPlayers(teamId){
     return function(dispatch){
         dispatch(beginAjaxCall());
-        return api.GetPlayers(url)
-            .then(palyers=>{
-                dispatch(loadPalyersSuccess(palyers));
+        return api.GetPlayers(teamId)
+            .then(players=>{
+                dispatch(loadPalyersSuccess(players));
             })
             .catch(error=>{
                 dispatch(ajaxCallError(error));

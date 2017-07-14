@@ -19,17 +19,16 @@ componentDidMount(){
 
 
 redirectToTeam(event){
-    debugger;
     let url = event.target.value;
     let id ="";
-    if(url.length===41){
-        id=url.slice(-3);
-    }else if(url.length===42)
-    {
-        id=url.slice(-4);
-    }
-    else{
-        id=url.slice(-2);
+    if (url.length === 41) {
+        id = url.slice(-3);
+    } else if (url.length === 42) {
+        id = url.slice(-4);
+    } else if (url.length === 39) {
+        id = url.slice(-1);
+    } else {
+        id = url.slice(-2);
     }
     browserHistory.push("/team/"+id);
 }

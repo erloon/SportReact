@@ -11,7 +11,9 @@ export default {
         },
         team:{},
         teamFixtures:{},
-        teamPlayers:{}
+        teamPlayers:{
+            players:[]
+        }
     },    
     allFixtures:{
         nextFixtures:{
