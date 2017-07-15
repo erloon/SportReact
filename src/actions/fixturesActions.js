@@ -8,6 +8,12 @@ export function loadNextFixturesSuccess(fixtures){
 export function loadFixturesByTimeSuccess(fixtures){
     return {type: types.LOAD_NEXT_FIXTURES_BY_TIME_SUCCESS, fixtures};
 }
+export function loadYesterdayFixturesSuccess(fixtures){
+    return {type: types.LOAD_YESTERDAY_FIXTURES_SUCCESS, fixtures};
+}
+export function loadTomorrowFixturesSuccess(fixtures){
+    return {type: types.LOAD_TOMORROW_FIXTURES_SUCCESS, fixtures};
+}
 export function loadFixturesByLeagueCodeSuccess(fixtures){
     return {type: types.LOAD_NEXT_FIXTURES_BY_LEAGUE_CODE_SUCCESS, fixtures};
 }
@@ -71,7 +77,6 @@ export function loadCompetetionFixtures(competetionId){
         dispatch(beginAjaxCall());
         return api.GetCompetetionFixtures(competetionId)
             .then(competetionFixtures=>{
-                debugger;
                 dispatch(loadCompetetionFixturesSuccess(competetionFixtures));
             })
             .catch(error=>{
@@ -125,6 +130,34 @@ export function loadTeamFixturesByTimeFrame(teamId,timeFrame){
         return api.GetTeamFixturesBySeason(teamId,timeFrame)
             .then(fixtures=>{
                 dispatch(loadTeamFixturesByTimeFrameSuccess(fixtures));
+            })
+            .catch(error=>{
+                dispatch(ajaxCallError(error));
+                throw(error);
+            });
+    };
+}
+export function loadYesterdayFixtures(){
+    let time="p1";
+    return function(dispatch){
+        dispatch(beginAjaxCall());
+        return api.GetFixturesByTime(time)
+            .then(fixtures=>{
+                dispatch(loadYesterdayFixturesSuccess(fixtures));
+            })
+            .catch(error=>{
+                dispatch(ajaxCallError(error));
+                throw(error);
+            });
+    };
+}
+export function loadTomorrowFixtures(){
+    let time="n2";
+    return function(dispatch){
+        dispatch(beginAjaxCall());
+        return api.GetFixturesByTime(time)
+            .then(fixtures=>{
+                dispatch(loadTomorrowFixturesSuccess(fixtures));
             })
             .catch(error=>{
                 dispatch(ajaxCallError(error));

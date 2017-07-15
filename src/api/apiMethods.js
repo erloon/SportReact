@@ -17,10 +17,9 @@ class ApiMethods {
             return error;
         });
     }
-
     static GetFixturesByTime(time){
-        let timeFrame=time;
-        return fetch(urls.GET_NEXT_FIXTURES_BY_TIME,{
+        let url= "http://api.football-data.org/v1/fixtures?timeFrame="+time;
+        return fetch(url,{
             headers: new Headers({
                 'X-Auth-Token': token
             }),
