@@ -24,7 +24,6 @@ class TeamPage extends React.Component{
     }
 
     getPlayers(){
-        debugger;
         this.props.actions.loadPlayers(this.props.params.id);
          this.setState({fixturesVisable:false,
         playersVisable:true});

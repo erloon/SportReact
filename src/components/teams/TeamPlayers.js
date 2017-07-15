@@ -11,7 +11,6 @@ class TeamPLayers extends React.Component{
     }
 
     render(){
-        debugger;
         const {teamPlayers} = this.props;
         return (
             <div>
@@ -50,7 +49,6 @@ class TeamPLayers extends React.Component{
 }
 
 function mapStateToProps(state,ownProps){
-    debugger;
     return {
         teamPlayers:state.allCompetetions.teamPlayers
     };

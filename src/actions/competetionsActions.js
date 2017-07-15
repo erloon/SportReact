@@ -121,7 +121,6 @@ export function loadTeamFixture(teamId){
         dispatch(beginAjaxCall());
         return api.GetTeamFixtures(teamId)
             .then(fixtures=>{
-                debugger;
                 dispatch(loadTeamFixturesSuccess(fixtures));
             })
             .catch(error=>{
