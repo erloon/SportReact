@@ -1,10 +1,10 @@
-import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as competetionActions from '../../actions/competetionsActions';
-import {Item, Header, Image, Button} from 'semantic-ui-react';
-import TeamFixtures from './TeamFixtures';
-import TeamPLayers from './TeamPlayers';
+import React, {PropTypes} from "react";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import * as competetionActions from "../../actions/competetionsActions";
+import {Item, Header, Image, Button} from "semantic-ui-react";
+import TeamFixtures from "./TeamFixtures";
+import TeamPLayers from "./TeamPlayers";
 
 class TeamPage extends React.Component{
     constructor(props,context){
@@ -17,7 +17,13 @@ class TeamPage extends React.Component{
         this.getFixtures = this.getFixtures.bind(this);
         this.getPlayers = this.getPlayers.bind(this);
     }
-    getFixtures(){
+   
+    componentDidMount(){
+        let teamId = this.props.params.id;
+        this.setState({teamId:teamId});
+        this.props.actions.loadTeam(teamId);
+}
+     getFixtures(){
         this.props.actions.loadTeamFixture(this.props.params.id);
         this.setState({fixturesVisable:true,
         playersVisable:false});
@@ -28,17 +34,12 @@ class TeamPage extends React.Component{
          this.setState({fixturesVisable:false,
         playersVisable:true});
     }
-    componentDidMount(){
-        let teamId = this.props.params.id;
-        this.setState({teamId:teamId});
-        this.props.actions.loadTeam(teamId);
-}
     render(){
         const {team, fixtures, teamPlayers} = this.props;
         return(
             <div>
                 <Header>
-                     <Image shape='circular'  src={team.crestUrl} /> 
+                     <Image shape="circular"  src={team.crestUrl} /> 
                     {" "+team.name}
                 </Header>
                 <p>Kod: {team.code}</p>
@@ -56,7 +57,11 @@ class TeamPage extends React.Component{
     }
 }
 TeamPage.propTypes ={
-    team:PropTypes.object.isRequired
+    team:PropTypes.object.isRequired,
+    actions: PropTypes.object.isRequired,
+    params:PropTypes.object.isRequired,
+    fixtures:PropTypes.array.isRequired,
+    teamPlayers:PropTypes.array.isRequired
 };
 
 function mapStateToProps(state,ownProps){

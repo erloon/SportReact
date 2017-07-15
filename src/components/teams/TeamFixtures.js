@@ -1,10 +1,10 @@
 import React, {PropTypes,Component} from "react";
 import {Icon, Label, Menu, Table} from "semantic-ui-react";
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as competetionActions from '../../actions/competetionsActions';
-import TablePagination from './TablePagination';
-import moment from 'moment';
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import * as competetionActions from "../../actions/competetionsActions";
+import TablePagination from "./TablePagination";
+import moment from "moment";
 
 class TeamFixtures extends React.Component{
     constructor(props,context){
@@ -42,7 +42,7 @@ onChangePage(pageOfItems) {
                 </Table.Body>
                 <Table.Footer>
                     <Table.Row>
-                        <Table.HeaderCell colSpan='3'>
+                        <Table.HeaderCell colSpan="3">
                         <TablePagination items={teamFixtures} onChangePage={this.onChangePage}/>
                         </Table.HeaderCell>
                     </Table.Row>
@@ -52,8 +52,9 @@ onChangePage(pageOfItems) {
     }
 }
 TeamFixtures.propsTypes ={
-    fixtures: PropTypes.array.isRequired
-}
+    fixtures: PropTypes.array.isRequired,
+    teamFixtures: PropTypes.array.isRequired
+};
 
 function mapStateToProps(state,ownProps){
     return {

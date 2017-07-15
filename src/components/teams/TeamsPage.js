@@ -1,10 +1,10 @@
-import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as competetionActions from '../../actions/competetionsActions';
-import { Item} from 'semantic-ui-react';
-import TeamItem from './TeamItem';
-import { browserHistory,hashHistory } from 'react-router';
+import React, {PropTypes} from "react";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import * as competetionActions from "../../actions/competetionsActions";
+import { Item} from "semantic-ui-react";
+import TeamItem from "./TeamItem";
+import { browserHistory,hashHistory } from "react-router";
 
 class TeamsPage extends React.Component {
     constructor(props,context){
@@ -46,7 +46,9 @@ redirectToTeam(event){
     }
 }
 TeamsPage.propTypes ={
-    teams: PropTypes.array.isRequired
+    teams: PropTypes.array.isRequired,
+    params:PropTypes.object.isRequired,
+    actions:PropTypes.object.isRequired
 };
 
 function mapStateToProps(state,ownProps){

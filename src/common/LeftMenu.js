@@ -15,7 +15,7 @@ class LeftMenu extends React.Component{
             <div>
                 <Menu secondary vertical>
                     <Menu.Item name="Drużyny" />
-                    <Menu.Item name='Zawodnicy'  />
+                    <Menu.Item name="Zawodnicy"  />
                 </Menu>
              </div>
         );

@@ -36,7 +36,9 @@ componentDidMount(){
 
 TablePage.propTypes = {
     competetions: PropTypes.array.isRequired,
-     table: PropTypes.object.isRequired  
+     table: PropTypes.object.isRequired,
+     params:PropTypes.object.isRequired,
+     actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state,ownProps){

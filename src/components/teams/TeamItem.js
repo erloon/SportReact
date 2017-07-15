@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react';
-import { Button, Icon, Image as ImageComponent, Item, Label } from 'semantic-ui-react';
-import {Link} from 'react-router';
+import React, {PropTypes} from "react";
+import { Button, Icon, Image as ImageComponent, Item, Label } from "semantic-ui-react";
+import {Link} from "react-router";
 
 
 const TeamItem = ({team, selfRedirect})=>{
@@ -12,15 +12,15 @@ const TeamItem = ({team, selfRedirect})=>{
         
         <Item>
             <Item.Image size="tiny" src={teamImageUrl}/>
-            <Item.Content verticalAlign='middle'>
+            <Item.Content verticalAlign="middle">
                  <Item.Header as="a">{team.name}</Item.Header>
                  <Item.Meta>
                     <span className="cinema">{team.code}</span>
                 </Item.Meta> 
                 <Item.Extra>
-                    <Button positive size="tiny" floated='left' value={team._links.self.href} onClick={selfRedirect}>
+                    <Button positive size="tiny" floated="left" value={team._links.self.href} onClick={selfRedirect}>
                         Informacje
-                        <Icon name='right chevron' />
+                        <Icon name="right chevron" />
                     </Button>
                     
                  </Item.Extra>
@@ -30,7 +30,8 @@ const TeamItem = ({team, selfRedirect})=>{
 };
 
 TeamItem.propTypes={
-    team: PropTypes.object.isRequired
+    team: PropTypes.object.isRequired,
+    selfRedirect: PropTypes.func.isRequired
 };
 
 export default TeamItem;

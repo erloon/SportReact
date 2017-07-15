@@ -23,7 +23,9 @@ componentDidMount(){
     }
 }
 CompetetionFixturesPage.propTypes ={
-    fixtures: PropTypes.object.isRequired
+    fixtures: PropTypes.object.isRequired,
+    params: PropTypes.object.isRequired,
+    actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state,ownProps){
