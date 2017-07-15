@@ -23,7 +23,9 @@ export default {
         },
         competetionFixtures:{
             fixtures:[]
-        }
+        },
+        tomorrowFixtures:[],
+        yesterdayFixtures:[]
     },
     ajaxCallsInProgress : 0
 };
